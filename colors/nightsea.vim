@@ -1,10 +1,14 @@
-" hemisu.vim - Vim color scheme
-" ----------------------------------------------------------
-" Author:   Noah Frederick (http://noahfrederick.com/)
-" Version:  3.4
+" nightsea.vim - Vim color scheme
+" NOTE: THIS IS STILL A WORK IN PROGRESS
+"..............................................................................
+" Author:   Pietro Patelli 
+" Version:  0.1
 " License:  Creative Commons Attribution-NonCommercial
 "           3.0 Unported License       (see README.md)
-" ----------------------------------------------------------
+"
+" Based on the hemisu colorscheme by Noah Frederick (http://noahfrederick.com/)
+" 
+"..............................................................................
 
 " Setup ----------------------------------------------------{{{
 " Reset syntax highlighting
@@ -14,7 +18,7 @@ if exists("syntax_on")
 endif
 
 " Declare theme name
-let g:colors_name = "hemisu"
+let g:colors_name = "nightsea"
 
 "}}}
 " The Colors -----------------------------------------------{{{
@@ -46,44 +50,22 @@ let s:lightGreen       = { "gui": "#BBFFAA", "cterm": "157" }
 let s:darkTan          = { "gui": "#503D15", "cterm": "52"  }
 let s:lightTan         = { "gui": "#ECE1C8", "cterm": "230" }
 
-" Assign to semantic categories based on background color
-if &background == "dark"
-  " Dark theme
-  let s:bg         = s:black
-  let s:norm       = s:almostWhite
-  let s:comment    = s:middleDarkGrey
-  let s:dimmed     = s:middleLightGrey
-  let s:subtle     = s:darkGrey
-  let s:faint      = s:almostBlack
-  let s:accent1    = s:middleLightBlue
-  let s:accent2    = s:middleLightGreen
-  let s:accent3    = s:lightGreen
-  let s:accent4    = s:lightTan
-  let s:normRed    = s:middleLightPink
-  let s:normGreen  = s:middleLightGreen
-  let s:normBlue   = s:middleLightBlue
-  let s:faintRed   = s:darkPink
-  let s:faintGreen = s:darkGreen
-  let s:faintBlue  = s:darkBlue
-else
-  " Light theme
-  let s:bg         = s:white
-  let s:norm       = s:almostBlack
-  let s:comment    = s:middleLightGrey
-  let s:dimmed     = s:middleDarkGrey
-  let s:subtle     = s:lightGrey
-  let s:faint      = s:almostWhite
-  let s:accent1    = s:middleDarkBlue
-  let s:accent2    = s:middleDarkGreen
-  let s:accent3    = s:middleDarkPink
-  let s:accent4    = s:darkTan
-  let s:normRed    = s:middleDarkPink
-  let s:normGreen  = s:middleDarkGreen
-  let s:normBlue   = s:middleDarkBlue
-  let s:faintRed   = s:lightPink
-  let s:faintGreen = s:lightGreen
-  let s:faintBlue  = s:lightBlue
-endif
+let s:bg         = s:black
+let s:norm       = s:almostWhite
+let s:comment    = s:middleDarkGrey
+let s:dimmed     = s:middleLightGrey
+let s:subtle     = s:darkGrey
+let s:faint      = s:almostBlack
+let s:accent1    = s:middleLightBlue
+let s:accent2    = s:middleLightGreen
+let s:accent3    = s:lightGreen
+let s:accent4    = s:lightTan
+let s:normRed    = s:middleLightPink
+let s:normGreen  = s:middleLightGreen
+let s:normBlue   = s:middleLightBlue
+let s:faintRed   = s:darkPink
+let s:faintGreen = s:darkGreen
+let s:faintBlue  = s:darkBlue
 
 "}}}
 " Utility Function -----------------------------------------{{{
