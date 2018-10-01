@@ -22,6 +22,10 @@ let g:colors_name = "nightsea"
 
 "}}}
 " The Colors -----------------------------------------------{{{
+" Reusable color template:
+" let s:                 = { "gui": "#######", "cterm": "XXX" }
+" Useful color:
+let s:noticeme         = { "gui": "#ff00ff", "cterm": "13" }
 " Define reusable colors
 let s:black            = { "gui": "#000000", "cterm": "16"  }
 let s:white            = { "gui": "#FFFFFF", "cterm": "231" }
@@ -31,6 +35,16 @@ let s:middleDarkGrey   = { "gui": "#777777", "cterm": "241" }
 let s:middleLightGrey  = { "gui": "#999999", "cterm": "246" }
 let s:lightGrey        = { "gui": "#BBBBBB", "cterm": "249" }
 let s:darkGrey         = { "gui": "#444444", "cterm": "238" }
+
+let s:darkRed          = { "gui": "#5f0000", "cterm": "52" }
+let s:middleDarkRed    = { "gui": "#870000", "cterm": "88" }
+let s:middleLightRed   = { "gui": "#af0000", "cterm": "124" }
+let s:lightRed         = { "gui": "#d70000", "cterm": "160" }
+
+let s:darkVBlue         = { "gui": "#00005f", "cterm": "17"  }
+let s:middleDarkVBlue   = { "gui": "#000087", "cterm": "18"  }
+let s:middleLightVBlue  = { "gui": "#005F87", "cterm": "24"  }
+let s:lightVBlue        = { "gui": "#5f5fd7", "cterm": "61" }
 
 let s:darkPink         = { "gui": "#63001C", "cterm": "88"  }
 let s:middleDarkPink   = { "gui": "#FF0055", "cterm": "197" }
@@ -56,14 +70,18 @@ let s:comment    = s:middleDarkGrey
 let s:dimmed     = s:middleLightGrey
 let s:subtle     = s:darkGrey
 let s:faint      = s:almostBlack
-let s:accent1    = s:middleLightBlue
-let s:accent2    = s:middleLightGreen
-let s:accent3    = s:lightGreen
+" let s:accent2    = s:middleLightGreen
+" let s:accent3    = s:lightGreen
+" let s:accent1    = s:middleLightBlue
+" let s:accent4    = s:lightTan
+let s:accent2    = s:darkRed
+let s:accent3    = s:middleDarkRed
+let s:accent1    = s:middleLightVBlue
 let s:accent4    = s:lightTan
-let s:normRed    = s:middleLightPink
+let s:normRed    = s:middleLightRed 
 let s:normGreen  = s:middleLightGreen
 let s:normBlue   = s:middleLightBlue
-let s:faintRed   = s:darkPink
+let s:faintRed   = s:darkRed 
 let s:faintGreen = s:darkGreen
 let s:faintBlue  = s:darkBlue
 
