@@ -165,7 +165,6 @@ call s:h("Comment",    { "fg": s:comment, "gui": "italic" })
 call s:h("Underlined", { "fg": s:accent1, "gui": "underline" })
 call s:h("Type",       { "fg": s:accent3 })
 call s:h("String",     { "fg": s:accent2 })
-" FIXME: The following three lines cause an annoying issue: some words are highlighted with yellow (#ffff00); the highlight disappears if the cursor coes downwards in the page, but the highlight remains if the cursos goes upwards." NOTE: Removing the gui options seems to do the trick
 call s:h("Keyword",    { "fg": s:accent2, "gui": "bold"})
 call s:h("Todo",       { "fg": s:normRed, "gui": "bold"})
 call s:h("Function",    {"gui": "bold"})
