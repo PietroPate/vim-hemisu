@@ -64,20 +64,17 @@ let s:lightGreen       = { "gui": "#BBFFAA", "cterm": "157" }
 let s:darkTan          = { "gui": "#503D15", "cterm": "52"  }
 let s:lightTan         = { "gui": "#ECE1C8", "cterm": "230" }
 
+
 let s:bg         = s:black
-let s:norm       = s:almostWhite
+let s:norm       = s:almostWhite "Comment
 let s:comment    = s:middleDarkGrey
 let s:dimmed     = s:middleLightGrey
 let s:subtle     = s:darkGrey
 let s:faint      = s:almostBlack
-" let s:accent2    = s:middleLightGreen
-" let s:accent3    = s:lightGreen
-" let s:accent1    = s:middleLightBlue
-" let s:accent4    = s:lightTan
 let s:accent2    = s:darkRed
-let s:accent3    = s:middleDarkRed
-let s:accent1    = s:middleLightVBlue
-let s:accent4    = s:lightTan
+let s:accent3    = s:middleLightVBlue
+let s:accent1    = s:middleDarkRed
+let s:accent4    = s:almostWhite
 let s:normRed    = s:middleLightRed 
 let s:normGreen  = s:middleLightGreen
 let s:normBlue   = s:middleLightBlue
@@ -102,16 +99,16 @@ endfunction
 " Highlights - Vim >= 7 ------------------------------------{{{
 if version >= 700
   call s:h("CursorLine",  { "bg": s:faint })
-  call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faint, "gui": "bold" })
+  call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faint })
   call s:h("Pmenu",       { "bg": s:faint })
   call s:h("PmenuThumb",  { "bg": s:norm })
   call s:h("PmenuSBar",   { "bg": s:subtle })
   call s:h("PmenuSel",    { "bg": s:faintBlue })
   call s:h("ColorColumn", { "bg": s:faintRed })
-  call s:h("SpellBad",    { "sp": s:normRed, "gui": "undercurl" })
-  call s:h("SpellCap",    { "sp": s:accent1, "gui": "undercurl" })
-  call s:h("SpellRare",   { "sp": s:normGreen, "gui": "undercurl" })
-  call s:h("SpellLocal",  { "sp": s:accent4, "gui": "undercurl" })
+  call s:h("SpellBad",    { "sp": s:normRed})
+  call s:h("SpellCap",    { "sp": s:accent1})
+  call s:h("SpellRare",   { "sp": s:normGreen})
+  call s:h("SpellLocal",  { "sp": s:accent4})
   hi! link CursorColumn	CursorLine
 
   " Use background for cterm Spell*, which does not support undercurl
@@ -129,20 +126,20 @@ call s:h("Cursor",       { "fg": s:bg, "bg": s:accent3 })
 call s:h("Visual",       { "bg": s:faintBlue })
 call s:h("IncSearch",    { "bg": s:faintBlue })
 call s:h("Search",       { "bg": s:faintGreen })
-call s:h("StatusLine",   { "fg": s:norm, "bg": s:faint, "gui": "bold", "cterm": "bold" })
+call s:h("StatusLine",   { "fg": s:norm, "bg": s:faint })
 call s:h("StatusLineNC", { "fg": s:dimmed, "bg": s:faint })
 call s:h("SignColumn",   { "fg": s:norm })
 call s:h("VertSplit",    { "fg": s:subtle, "bg": s:faint })
 call s:h("TabLine",      { "fg": s:dimmed, "bg": s:faint })
-call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
+" call s:h("TabLineSel",   { "gui": "bold", "cterm": "bold" })
 call s:h("Folded",       { "fg": s:comment, "bg": s:faint })
 call s:h("Directory",    { "fg": s:accent1 })
-call s:h("Title",        { "fg": s:accent4, "gui": "bold", "cterm": "bold" })
+call s:h("Title",        { "fg": s:accent4 })
 call s:h("ErrorMsg",     { "bg": s:faintRed })
 call s:h("DiffAdd",      { "bg": s:faintGreen })
 call s:h("DiffChange",   { "bg": s:faintRed })
 call s:h("DiffDelete",   { "fg": s:normRed, "bg": s:faintRed })
-call s:h("DiffText",     { "bg": s:faintRed, "gui": "bold", "cterm": "bold" })
+call s:h("DiffText",     { "bg": s:faintRed })
 call s:h("User1",        { "fg": s:bg, "bg": s:normGreen })
 call s:h("User2",        { "fg": s:bg, "bg": s:normRed })
 call s:h("User3",        { "fg": s:bg, "bg": s:normBlue })
@@ -159,13 +156,16 @@ hi! link SpecialKey   NonText
 "}}}
 " Highlights - Generic Syntax ------------------------------{{{
 call s:h("Delimiter",  { "fg": s:dimmed })
-call s:h("Comment",    { "fg": s:comment, "gui": "italic" })
-call s:h("Underlined", { "fg": s:accent1, "gui": "underline", "cterm": "underline" })
+call s:h("Comment",    { "fg": s:comment })
+call s:h("Underlined", { "fg": s:accent1 })
 call s:h("Type",       { "fg": s:accent3 })
 call s:h("String",     { "fg": s:accent2 })
-call s:h("Keyword",    { "fg": s:accent2, "gui": "bold", "cterm": "bold" })
-call s:h("Todo",       { "fg": s:normRed, "gui": "bold", "cterm": "bold" })
-call s:h("Function",   { "gui": "bold", "cterm": "bold" })
+" FIXME: The following three lines cause an annoying issue: some words are highlighted with yellow (#ffff00); the highlight disappears if the cursor coes downwards in the page, but the highlight remains if the cursos goes upwards." NOTE: Removing the gui options seems to do the trick
+"
+call s:h("Todo",       { "fg": s:normRed, })
+call s:h("Keyword",    { "fg": s:accent2, })
+call s:h("Function",   { "fg": s:accent2, })
+
 hi! link Identifier  Function
 hi! link Statement   Type
 hi! link Constant    Directory
