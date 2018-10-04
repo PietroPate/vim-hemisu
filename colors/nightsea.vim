@@ -7,10 +7,9 @@
 "           3.0 Unported License       (see README.md)
 "
 " Based on the hemisu colorscheme by Noah Frederick (http://noahfrederick.com/)
-" 
 "..............................................................................
 
-" Setup ----------------------------------------------------{{{
+"................................... Setup ....................................
 " Reset syntax highlighting
 hi clear
 if exists("syntax_on")
@@ -20,8 +19,7 @@ endif
 " Declare theme name
 let g:colors_name = "nightsea"
 
-"}}}
-" The Colors -----------------------------------------------{{{
+"................................. The Colors .................................
 " Reusable color template:
 " let s:                 = { "gui": "#######", "cterm": "XXX" }
 " Useful color:
@@ -30,9 +28,10 @@ let s:noticeme         = { "gui": "#ff00ff", "cterm": "13" }
 let s:black            = { "gui": "#000000", "cterm": "16"  }
 let s:white            = { "gui": "#FFFFFF", "cterm": "231" }
 " let s:almostWhite      = { "gui": "#EEEEEE", "cterm": "255" } "
-let s:almostWhite      = { "gui": "#dadada", "cterm": "253" }
-" let s:almostWhite      = { "gui": "#d0d0d0", "cterm": "252" }
+" let s:almostWhite      = { "gui": "#dadada", "cterm": "253" }
+let s:almostWhite      = { "gui": "#d0d0d0", "cterm": "252" }
 let s:almostnearWhite  = { "gui": "#d0d0d0", "cterm": "252" }
+let s:nearWhite        = { "gui": "#c6c6c6", "cterm": "251" }
 let s:almostBlack      = { "gui": "#111111", "cterm": "233" }
 let s:middleDarkGrey   = { "gui": "#777777", "cterm": "241" }
 let s:middleLightGrey  = { "gui": "#999999", "cterm": "246" }
@@ -49,6 +48,7 @@ let s:middleDarkVBlue  = { "gui": "#000087", "cterm": "18"  }
 let s:middleLightVBlue = { "gui": "#005F87", "cterm": "24"  }
 let s:lightVBlue       = { "gui": "#5f5fd7", "cterm": "61"  }
 
+let s:darkerPurple     = { "gui": "#5f005f", "cterm": "53" }
 let s:darkPurple       = { "gui": "#5f0087", "cterm": "54" }
 let s:middleDarkPurple = { "gui": "#87005f", "cterm": "89" }
 let s:middleLightPurple= { "gui": "#870087", "cterm": "90" }
@@ -75,16 +75,14 @@ let s:lightTan         = { "gui": "#ECE1C8", "cterm": "230" }
 
 
 let s:bg         = s:black
-let s:norm       = s:almostWhite "Comment
+let s:norm       = s:almostWhite 
 let s:comment    = s:middleDarkGrey
 let s:dimmed     = s:middleLightGrey
 let s:subtle     = s:darkGrey
 let s:faint      = s:almostBlack
-" let s:accent1    = s:middleDarkRed
-let s:accent1    = s:middleDarkGreen
-" let s:accent2    = s:darkRed
-let s:accent2    = s:darkerGreen
-let s:accent3    = s:middleLightVBlue
+let s:accent1    = s:middleDarkGreen "alt: middleDarkRed; lightVBlue
+let s:accent2    = s:middleLightVBlue "alt: darkRed; darkerGreen; darkerPurple; lightVBlye
+let s:accent3    = s:darkerGreen
 let s:accent4    = s:lightTan
 let s:normRed    = s:middleLightRed 
 let s:normGreen  = s:middleLightGreen
@@ -93,8 +91,7 @@ let s:faintRed   = s:darkRed
 let s:faintGreen = s:darkGreen
 let s:faintBlue  = s:darkBlue
 
-"}}}
-" Utility Function -----------------------------------------{{{
+".............................. Utility Function ..............................
 function! s:h(group, style)
   execute "highlight" a:group
         \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
@@ -106,8 +103,7 @@ function! s:h(group, style)
         \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-"}}}
-" Highlights - Vim >= 7 ------------------------------------{{{
+"........................... Highlights - Vim >= 7 ............................
 if version >= 700
   call s:h("CursorLine",  { "bg": s:faint })
   call s:h("MatchParen",  { "fg": s:accent1, "bg": s:faint, "gui": "bold" })
@@ -129,8 +125,7 @@ if version >= 700
   execute "hi! SpellLocal ctermbg=" s:faint.cterm
 endif
 
-"}}}
-" Highlights - UI ------------------------------------------{{{
+".............................. Highlights - UI ...............................
 call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
 call s:h("NonText",      { "fg": s:subtle })
 call s:h("Cursor",       { "fg": s:bg, "bg": s:accent3 })
@@ -164,8 +159,7 @@ hi! link TabLineFill  StatusLineNC
 hi! link LineNr       NonText
 hi! link SpecialKey   NonText
 
-"}}}
-" Highlights - Generic Syntax ------------------------------{{{
+"........................ Highlights - Generic Syntax .........................
 call s:h("Delimiter",  { "fg": s:dimmed })
 call s:h("Comment",    { "fg": s:comment, "gui": "italic" })
 call s:h("Underlined", { "fg": s:accent1, "gui": "underline" })
@@ -183,35 +177,29 @@ hi! link Special     Constant
 hi! link PreProc     Constant
 hi! link Error       ErrorMsg
 
-"}}}
-" Highlights - HTML ----------------------------------------{{{
+"............................. Highlights - HTML ..............................
 hi! link htmlLink    Underlined
 hi! link htmlTag     Type
 hi! link htmlEndTag  htmlTag
 
-"}}}
-" Highlights - CSS -----------------------------------------{{{
+".............................. Highlights - CSS ..............................
 hi! link cssBraces      Delimiter
 hi! link cssSelectorOp  cssBraces
 hi! link cssClassName   Normal
 
-"}}}
-" Highlights - Markdown ------------------------------------{{{
+"........................... Highlights - Markdown ............................
 hi! link mkdListItem  mkdDelimiter
 
-"}}}
-" Highlights - Shell ---------------------------------------{{{
+"............................. Highlights - Shell .............................
 hi! link shOperator  Delimiter
 hi! link shCaseBar   Delimiter
 
-"}}}
-" Highlights - JavaScript ----------------------------------{{{
+".......................... Highlights - JavaScript ...........................
 hi! link javaScriptValue   Constant
 hi! link javaScriptNull    Constant
 hi! link javaScriptBraces  Normal
 
-"}}}
-" Highlights - Help ----------------------------------------{{{
+"............................. Highlights - Help ..............................
 hi! link helpExample         String
 hi! link helpHeadline        Title
 hi! link helpSectionDelim    Comment
@@ -219,6 +207,11 @@ hi! link helpHyperTextEntry  Statement
 hi! link helpHyperTextJump   Underlined
 hi! link helpURL             Underlined
 
-"}}}
+"............................ Highlights - Matlab .............................
+hi! link matlabTodo          Todo
+hi! link matlabCellComment   Comment 
 
+
+"..............................................................................
 " vim: fdm=marker:sw=2:sts=2:et
+

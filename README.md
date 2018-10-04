@@ -2,9 +2,7 @@
 
 Fork of the amazing [Hemisu Colorscheme](https://github.com/noahfrederick/vim-hemisu) by [Noah Frederick](http://noahfrederick.com/).
 
-This colorscheme only has a dark variant and will use a different color palette. 
-
-#### Note: This project is still in its infancy.
+This colorscheme only has a dark variant and uses a different color palette. 
 
 ### License: 
 
