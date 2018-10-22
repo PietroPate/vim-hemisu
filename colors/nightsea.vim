@@ -1,7 +1,7 @@
 " nightsea.vim - Vim color scheme
 " NOTE: THIS IS STILL A WORK IN PROGRESS
 "..............................................................................
-" Author:   Pietro Patelli 
+" Author:   Pietro Patelli
 " Version:  0.1
 " License:  Creative Commons Attribution-NonCommercial
 "           3.0 Unported License       (see README.md)
@@ -75,7 +75,7 @@ let s:lightTan         = { "gui": "#ECE1C8", "cterm": "230" }
 
 
 let s:bg         = s:black
-let s:norm       = s:almostWhite 
+let s:norm       = s:almostWhite
 let s:comment    = s:middleDarkGrey
 let s:dimmed     = s:middleLightGrey
 let s:subtle     = s:darkGrey
@@ -84,10 +84,10 @@ let s:accent1    = s:middleDarkGreen "alt: middleDarkRed; lightVBlue
 let s:accent2    = s:middleLightVBlue "alt: darkRed; darkerGreen; darkerPurple; lightVBlye
 let s:accent3    = s:darkerGreen
 let s:accent4    = s:lightTan
-let s:normRed    = s:middleLightRed 
+let s:normRed    = s:middleLightRed
 let s:normGreen  = s:middleLightGreen
 let s:normBlue   = s:middleLightBlue
-let s:faintRed   = s:darkRed 
+let s:faintRed   = s:darkRed
 let s:faintGreen = s:darkGreen
 let s:faintBlue  = s:darkBlue
 
@@ -117,6 +117,7 @@ if version >= 700
   call s:h("SpellRare",   { "sp": s:normGreen, "gui": "undercurl"})
   call s:h("SpellLocal",  { "sp": s:accent4, "gui": "undercurl"})
   hi! link CursorColumn	CursorLine
+
 
   " Use background for cterm Spell*, which does not support undercurl
   execute "hi! SpellBad   ctermbg=" s:faintRed.cterm
@@ -209,8 +210,11 @@ hi! link helpURL             Underlined
 
 "............................ Highlights - Matlab .............................
 hi! link matlabTodo          Todo
-hi! link matlabCellComment   Comment 
+hi! link matlabCellComment   Comment
 
+"............................. Highlights - LaTeX .............................
+hi! link texItalStyle  Underlined
+hi! link texBoldStyle  Underlined
 
 "..............................................................................
 " vim: fdm=marker:sw=2:sts=2:et
