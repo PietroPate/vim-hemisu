@@ -10,6 +10,7 @@
 "..............................................................................
 
 "................................... Setup ....................................
+set background=dark
 " Reset syntax highlighting
 hi clear
 if exists("syntax_on")
@@ -32,11 +33,13 @@ let s:white            = { "gui": "#FFFFFF", "cterm": "231" }
 let s:almostWhite      = { "gui": "#d0d0d0", "cterm": "252" }
 let s:almostnearWhite  = { "gui": "#d0d0d0", "cterm": "252" }
 let s:nearWhite        = { "gui": "#c6c6c6", "cterm": "251" }
-let s:almostBlack      = { "gui": "#111111", "cterm": "233" }
 let s:middleDarkGrey   = { "gui": "#777777", "cterm": "241" }
 let s:middleLightGrey  = { "gui": "#999999", "cterm": "246" }
 let s:lightGrey        = { "gui": "#BBBBBB", "cterm": "249" }
 let s:darkGrey         = { "gui": "#444444", "cterm": "238" }
+let s:darkerGrey       = { "gui": "#303030", "cterm": "236" }
+let s:evendarkerGrey   = { "gui": "#262626", "cterm": "235" }
+let s:almostBlack      = { "gui": "#111111", "cterm": "233" }
 
 let s:darkRed          = { "gui": "#5f0000", "cterm": "52"  }
 let s:middleDarkRed    = { "gui": "#870000", "cterm": "88"  }
@@ -46,7 +49,7 @@ let s:lightRed         = { "gui": "#d70000", "cterm": "160" }
 let s:darkVBlue        = { "gui": "#00005f", "cterm": "17"  }
 let s:middleDarkVBlue  = { "gui": "#000087", "cterm": "18"  }
 let s:middleLightVBlue = { "gui": "#005F87", "cterm": "24"  }
-let s:lightVBlue       = { "gui": "#5f5fd7", "cterm": "61"  }
+let s:lightVBlue       = { "gui": "#5f87af", "cterm": "68"  }
 
 let s:darkerPurple     = { "gui": "#5f005f", "cterm": "53" }
 let s:darkPurple       = { "gui": "#5f0087", "cterm": "54" }
@@ -89,7 +92,8 @@ let s:normGreen  = s:middleLightGreen
 let s:normBlue   = s:middleLightBlue
 let s:faintRed   = s:darkRed
 let s:faintGreen = s:darkGreen
-let s:faintBlue  = s:darkBlue
+" let s:faintBlue  = s:darkBlue
+let s:faintBlue  = s:lightVBlue
 
 ".............................. Utility Function ..............................
 function! s:h(group, style)
@@ -130,8 +134,8 @@ endif
 call s:h("Normal",       { "fg": s:norm, "bg": s:bg })
 call s:h("NonText",      { "fg": s:subtle })
 call s:h("Cursor",       { "fg": s:bg, "bg": s:accent3 })
-call s:h("Visual",       { "bg": s:faintBlue })
-call s:h("IncSearch",    { "bg": s:faintBlue })
+call s:h("Visual",       { "bg": s:evendarkerGrey })
+call s:h("IncSearch",    { "bg": s:evendarkerGrey })
 call s:h("Search",       { "bg": s:faintGreen })
 call s:h("StatusLine",   { "fg": s:norm, "bg": s:faint, "gui": "bold" })
 call s:h("StatusLineNC", { "fg": s:dimmed, "bg": s:faint })
