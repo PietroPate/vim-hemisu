@@ -70,8 +70,8 @@ let s:lightBlue        = { "gui": "#CBE4EE", "cterm": "195" }
 let s:darkerGreen      = { "gui": "#005f00", "cterm": "22"  }
 let s:darkGreen        = { "gui": "#5F5F00", "cterm": "58"  }
 let s:middleDarkGreen  = { "gui": "#739200", "cterm": "64"  }
-let s:middleLightGreen = { "gui": "#B1D631", "cterm": "149" }
-let s:lightGreen       = { "gui": "#BBFFAA", "cterm": "157" }
+let s:middleLightGreen = { "gui": "#5faf00", "cterm": "70"  }
+let s:lightGreen       = { "gui": "#87af87", "cterm": "108" }
 
 let s:darkTan          = { "gui": "#503D15", "cterm": "52"  }
 let s:lightTan         = { "gui": "#ECE1C8", "cterm": "230" }
@@ -91,7 +91,7 @@ let s:normRed    = s:middleLightRed
 let s:normGreen  = s:middleLightGreen
 let s:normBlue   = s:middleLightBlue
 let s:faintRed   = s:darkRed
-let s:faintGreen = s:darkGreen
+let s:faintGreen = s:lightGreen
 " let s:faintBlue  = s:darkBlue
 let s:faintBlue  = s:lightVBlue
 
