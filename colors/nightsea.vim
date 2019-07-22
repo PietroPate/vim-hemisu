@@ -297,6 +297,8 @@ let s:normBlue   = s:n116_darkslategray3
 let s:faintRed   = s:n052_darkred
 let s:faintGreen = s:n108_darkseagreen
 let s:faintBlue  = s:n068_steelblue3
+let s:normOrange = s:n130_darkorange3
+let s:normYellow = s:n179_lightgoldenrod3
 
 ".............................. Utility Function ..............................
 function! s:h(group, style)
@@ -386,9 +388,18 @@ hi! link Special     Constant
 hi! link PreProc     Constant
 hi! link Error       ErrorMsg
 
+"............................. Highlights - Ttodo ..............................
+call s:h('TtodoPriA',       { 'fg': s:normRed})
+call s:h('TtodoPriB',       { 'fg': s:normOrange})
+call s:h('TtodoPriC',       { 'fg': s:normYellow})
+
+"............................ Highlights - Vimwiki .............................
+hi! link VimwikiLink Directory
+
 "........................... Highlights - Vimscript ............................
 hi! link vimOperError Normal
 hi! link vimAugroupError vimAugroupKey
+
 "............................. Highlights - HTML ..............................
 hi! link htmlLink    Underlined
 hi! link htmlTag     Type
