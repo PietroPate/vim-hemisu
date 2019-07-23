@@ -297,8 +297,8 @@ let s:normBlue   = s:n116_darkslategray3
 let s:faintRed   = s:n052_darkred
 let s:faintGreen = s:n108_darkseagreen
 let s:faintBlue  = s:n068_steelblue3
-let s:faintOrange = s:n130_darkorange3
-let s:faintYellow = s:n179_lightgoldenrod3
+let s:normOrange = s:n130_darkorange3
+let s:normYellow = s:n179_lightgoldenrod3
 
 ".............................. Utility Function ..............................
 function! s:h(group, style)
@@ -389,9 +389,9 @@ hi! link PreProc     Constant
 hi! link Error       ErrorMsg
 
 "............................. Highlights - Ttodo ..............................
-call s:h('TtodoPriA',       { 'fg': s:faintRed})
-call s:h('TtodoPriB',       { 'fg': s:faintOrange})
-call s:h('TtodoPriC',       { 'fg': s:faintYellow})
+call s:h('TtodoPriA',       { 'fg': s:normRed})
+call s:h('TtodoPriB',       { 'fg': s:normOrange})
+call s:h('TtodoPriC',       { 'fg': s:normYellow})
 
 "............................ Highlights - Vimwiki .............................
 hi! link VimwikiLink Directory
