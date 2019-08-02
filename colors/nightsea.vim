@@ -10,7 +10,6 @@
 "..............................................................................
 "
 "................................... Setup ....................................
-set background=dark
 " Reset syntax highlighting
 hi clear
 if exists('syntax_on')
@@ -279,26 +278,52 @@ let s:n254_grey89            = {'gui': '#e4e4e4', 'cterm': '254'}
 let s:n255_grey93            = {'gui': '#eeeeee', 'cterm': '255'}
 "
 
-let s:noticeme   = s:n013_fuchsia
-let s:bg         = s:n016_grey0
-let s:norm       = s:n252_grey82
-let s:comment    = s:n241_grey39
-let s:dimmed     = s:n246_grey58
-let s:subtle     = s:n238_grey27
-let s:nearfaint  = s:n235_grey15
-let s:faint      = s:n234_grey11
-let s:accent1    = s:n064_chartreuse4
-let s:accent2    = s:n024_deepskyblue4
-let s:accent3    = s:n022_darkgreen
-let s:accent4    = s:n153_lightskyblue1
-let s:normRed    = s:n124_red3
-let s:normGreen  = s:n070_chartreuse3
-let s:normBlue   = s:n116_darkslategray3
-let s:faintRed   = s:n052_darkred
-let s:faintGreen = s:n108_darkseagreen
-let s:faintBlue  = s:n068_steelblue3
-let s:normOrange = s:n130_darkorange3
-let s:normYellow = s:n179_lightgoldenrod3
+" Assign to semantic categories based on background color
+if &background == "dark"
+  " Dark theme
+  let s:noticeme   = s:n013_fuchsia
+  let s:bg         = s:n016_grey0
+  let s:norm       = s:n252_grey82
+  let s:comment    = s:n241_grey39
+  let s:dimmed     = s:n246_grey58
+  let s:subtle     = s:n238_grey27
+  let s:nearfaint  = s:n235_grey15
+  let s:faint      = s:n234_grey11
+  let s:accent1    = s:n064_chartreuse4
+  let s:accent2    = s:n024_deepskyblue4
+  let s:accent3    = s:n022_darkgreen
+  let s:accent4    = s:n153_lightskyblue1
+  let s:normRed    = s:n124_red3
+  let s:normGreen  = s:n070_chartreuse3
+  let s:normBlue   = s:n116_darkslategray3
+  let s:faintRed   = s:n052_darkred
+  let s:faintGreen = s:n108_darkseagreen
+  let s:faintBlue  = s:n068_steelblue3
+  let s:normOrange = s:n130_darkorange3
+  let s:normYellow = s:n179_lightgoldenrod3
+else
+  " Light theme
+  let s:noticeme   = s:n013_fuchsia
+  let s:bg         = s:n231_grey100
+  let s:norm       = s:n233_grey7
+  let s:comment    = s:n246_grey58
+  let s:dimmed     = s:n241_grey39
+  let s:subtle     = s:n249_grey70
+  let s:nearfaint  = s:n254_grey89
+  let s:faint      = s:n255_grey93
+  let s:accent1    = s:n064_chartreuse4
+  let s:accent2    = s:n024_deepskyblue4
+  let s:accent3    = s:n022_darkgreen
+  let s:accent4    = s:n153_lightskyblue1
+  let s:normRed    = s:n124_red3
+  let s:normGreen  = s:n070_chartreuse3
+  let s:normBlue   = s:n116_darkslategray3
+  let s:faintRed   = s:n052_darkred
+  let s:faintGreen = s:n108_darkseagreen
+  let s:faintBlue  = s:n068_steelblue3
+  let s:normOrange = s:n130_darkorange3
+  let s:normYellow = s:n179_lightgoldenrod3
+endif
 
 ".............................. Utility Function ..............................
 function! s:h(group, style)
@@ -440,4 +465,3 @@ hi! link texBoldStyle  Underlined
 
 "..............................................................................
 " vim: fdm=marker:sw=2:sts=2:et
-
