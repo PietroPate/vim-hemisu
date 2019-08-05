@@ -278,51 +278,56 @@ let s:n254_grey89            = {'gui': '#e4e4e4', 'cterm': '254'}
 let s:n255_grey93            = {'gui': '#eeeeee', 'cterm': '255'}
 "
 
-" Assign to semantic categories based on background color
+".......................... Colors used in the theme ...........................
+let nightsea_col = {}
 if &background == "dark"
   " Dark theme
-  let s:noticeme   = s:n013_fuchsia
-  let s:bg         = s:n016_grey0
-  let s:norm       = s:n252_grey82
-  let s:comment    = s:n241_grey39
-  let s:dimmed     = s:n246_grey58
-  let s:subtle     = s:n238_grey27
-  let s:nearfaint  = s:n235_grey15
-  let s:faint      = s:n234_grey11
-  let s:accent1    = s:n064_chartreuse4
-  let s:accent2    = s:n024_deepskyblue4
-  let s:accent3    = s:n022_darkgreen
-  let s:accent4    = s:n153_lightskyblue1
-  let s:normRed    = s:n124_red3
-  let s:normGreen  = s:n070_chartreuse3
-  let s:normBlue   = s:n116_darkslategray3
-  let s:faintRed   = s:n052_darkred
-  let s:faintGreen = s:n108_darkseagreen
-  let s:faintBlue  = s:n068_steelblue3
-  let s:normOrange = s:n130_darkorange3
-  let s:normYellow = s:n179_lightgoldenrod3
+  let nightsea_col.noticeme   = s:n013_fuchsia
+  let nightsea_col.bg         = s:n016_grey0
+  let nightsea_col.norm       = s:n252_grey82
+  let nightsea_col.comment    = s:n241_grey39
+  let nightsea_col.dimmed     = s:n246_grey58
+  let nightsea_col.subtle     = s:n238_grey27
+  let nightsea_col.nearfaint  = s:n235_grey15
+  let nightsea_col.faint      = s:n234_grey11
+  let nightsea_col.accent1    = s:n064_chartreuse4
+  let nightsea_col.accent2    = s:n024_deepskyblue4
+  let nightsea_col.accent3    = s:n022_darkgreen
+  let nightsea_col.accent4    = s:n153_lightskyblue1
+  let nightsea_col.normRed    = s:n124_red3
+  let nightsea_col.faintRed   = s:n052_darkred
+  let nightsea_col.normGreen  = s:n070_chartreuse3
+  let nightsea_col.faintGreen = s:n108_darkseagreen
+  let nightsea_col.normBlue   = s:n031_deepskyblue3
+  let nightsea_col.faintBlue  = s:n024_deepskyblue4
+  let nightsea_col.normOrange = s:n130_darkorange3
+  let nightsea_col.normYellow = s:n179_lightgoldenrod3
+  let nightsea_col.white      = s:n252_grey82
+  let nightsea_col.black      = s:n016_grey0
 else
   " Light theme
-  let s:noticeme   = s:n013_fuchsia
-  let s:bg         = s:n231_grey100
-  let s:norm       = s:n233_grey7
-  let s:comment    = s:n246_grey58
-  let s:dimmed     = s:n241_grey39
-  let s:subtle     = s:n249_grey70
-  let s:nearfaint  = s:n254_grey89
-  let s:faint      = s:n255_grey93
-  let s:accent1    = s:n064_chartreuse4
-  let s:accent2    = s:n024_deepskyblue4
-  let s:accent3    = s:n022_darkgreen
-  let s:accent4    = s:n153_lightskyblue1
-  let s:normRed    = s:n124_red3
-  let s:normGreen  = s:n070_chartreuse3
-  let s:normBlue   = s:n116_darkslategray3
-  let s:faintRed   = s:n052_darkred
-  let s:faintGreen = s:n108_darkseagreen
-  let s:faintBlue  = s:n068_steelblue3
-  let s:normOrange = s:n130_darkorange3
-  let s:normYellow = s:n179_lightgoldenrod3
+  let nightsea_col.noticeme   = s:n013_fuchsia
+  let nightsea_col.bg         = s:n231_grey100
+  let nightsea_col.norm       = s:n233_grey7
+  let nightsea_col.comment    = s:n246_grey58
+  let nightsea_col.dimmed     = s:n241_grey39
+  let nightsea_col.subtle     = s:n249_grey70
+  let nightsea_col.nearfaint  = s:n254_grey89
+  let nightsea_col.faint      = s:n255_grey93
+  let nightsea_col.accent1    = s:n064_chartreuse4
+  let nightsea_col.accent2    = s:n024_deepskyblue4
+  let nightsea_col.accent3    = s:n022_darkgreen
+  let nightsea_col.accent4    = s:n153_lightskyblue1
+  let nightsea_col.normRed    = s:n124_red3
+  let nightsea_col.faintRed   = s:n052_darkred
+  let nightsea_col.normGreen  = s:n070_chartreuse3
+  let nightsea_col.faintGreen = s:n108_darkseagreen
+  let nightsea_col.normBlue   = s:n024_deepskyblue4
+  let nightsea_col.faintBlue  = s:n031_deepskyblue3
+  let nightsea_col.normOrange = s:n130_darkorange3
+  let nightsea_col.normYellow = s:n179_lightgoldenrod3
+  let nightsea_col.white      = s:n252_grey82
+  let nightsea_col.black      = s:n016_grey0
 endif
 
 ".............................. Utility Function ..............................
@@ -339,52 +344,52 @@ endfunction
 
 "........................... Highlights - Vim >= 7 ............................
 if v:version >= 700
-  call s:h('CursorLine',  { 'bg': s:faint })
-  call s:h('MatchParen',  { 'fg': s:accent1, 'bg': s:faint, 'gui': 'bold' })
-  call s:h('Pmenu',       { 'bg': s:faint })
-  call s:h('PmenuThumb',  { 'bg': s:norm })
-  call s:h('PmenuSBar',   { 'bg': s:subtle })
-  call s:h('PmenuSel',    { 'bg': s:faintBlue })
-  call s:h('ColorColumn', { 'bg': s:faintRed })
-  call s:h('SpellBad',    { 'sp': s:normRed, 'gui': 'undercurl'})
-  call s:h('SpellCap',    { 'sp': s:accent1, 'gui': 'undercurl'})
-  call s:h('SpellRare',   { 'sp': s:accent4, 'gui': 'undercurl'})
-  call s:h('SpellLocal',  { 'sp': s:accent4, 'gui': 'undercurl'})
+  call s:h('CursorLine',  { 'bg': nightsea_col.faint })
+  call s:h('MatchParen',  { 'fg': nightsea_col.accent1, 'bg': nightsea_col.faint, 'gui': 'bold' })
+  call s:h('Pmenu',       { 'bg': nightsea_col.faint })
+  call s:h('PmenuThumb',  { 'bg': nightsea_col.norm })
+  call s:h('PmenuSBar',   { 'bg': nightsea_col.subtle })
+  call s:h('PmenuSel',    { 'bg': nightsea_col.faintBlue })
+  call s:h('ColorColumn', { 'bg': nightsea_col.faintRed })
+  call s:h('SpellBad',    { 'sp': nightsea_col.normRed, 'gui': 'undercurl'})
+  call s:h('SpellCap',    { 'sp': nightsea_col.accent1, 'gui': 'undercurl'})
+  call s:h('SpellRare',   { 'sp': nightsea_col.accent4, 'gui': 'undercurl'})
+  call s:h('SpellLocal',  { 'sp': nightsea_col.accent4, 'gui': 'undercurl'})
   hi! link CursorColumn	CursorLine
 
 
   " Use background for cterm Spell*, which does not support undercurl
-  execute 'hi! SpellBad   ctermbg=' s:faintRed.cterm
-  execute 'hi! SpellCap   ctermbg=' s:faintBlue.cterm
-  execute 'hi! SpellRare  ctermbg=' s:faintGreen.cterm
-  execute 'hi! SpellLocal ctermbg=' s:faint.cterm
+  execute 'hi! SpellBad   ctermbg=' nightsea_col.faintRed.cterm
+  execute 'hi! SpellCap   ctermbg=' nightsea_col.faintBlue.cterm
+  execute 'hi! SpellRare  ctermbg=' nightsea_col.faintGreen.cterm
+  execute 'hi! SpellLocal ctermbg=' nightsea_col.faint.cterm
 endif
 
 ".............................. Highlights - UI ...............................
-call s:h('Normal',       { 'fg': s:norm, 'bg': s:bg })
-call s:h('NonText',      { 'fg': s:subtle })
-call s:h('Cursor',       { 'fg': s:bg, 'bg': s:norm })
-call s:h('Visual',       { 'bg': s:subtle })
-call s:h('Conceal',      { 'bg': s:nearfaint })
-call s:h('IncSearch',    { 'bg': s:subtle })
-call s:h('Search',       { 'bg': s:faintGreen })
-call s:h('StatusLine',   { 'fg': s:norm, 'bg': s:faint, 'gui': 'bold' })
-call s:h('StatusLineNC', { 'fg': s:dimmed, 'bg': s:faint })
-call s:h('SignColumn',   { 'fg': s:norm })
-call s:h('VertSplit',    { 'fg': s:subtle, 'bg': s:faint })
-call s:h('TabLine',      { 'fg': s:dimmed, 'bg': s:faint })
+call s:h('Normal',       { 'fg': nightsea_col.norm, 'bg': nightsea_col.bg })
+call s:h('NonText',      { 'fg': nightsea_col.subtle })
+call s:h('Cursor',       { 'fg': nightsea_col.bg, 'bg': nightsea_col.norm })
+call s:h('Visual',       { 'bg': nightsea_col.subtle })
+call s:h('Conceal',      { 'bg': nightsea_col.nearfaint })
+call s:h('IncSearch',    { 'bg': nightsea_col.subtle })
+call s:h('Search',       { 'bg': nightsea_col.faintGreen })
+call s:h('StatusLine',   { 'fg': nightsea_col.norm, 'bg': nightsea_col.faint, 'gui': 'bold' })
+call s:h('StatusLineNC', { 'fg': nightsea_col.dimmed, 'bg': nightsea_col.faint })
+call s:h('SignColumn',   { 'fg': nightsea_col.norm })
+call s:h('VertSplit',    { 'fg': nightsea_col.subtle, 'bg': nightsea_col.faint })
+call s:h('TabLine',      { 'fg': nightsea_col.dimmed, 'bg': nightsea_col.faint })
 call s:h('TabLineSel',   { 'gui': 'bold'})
-call s:h('Folded',       { 'fg': s:comment, 'bg': s:faint })
-call s:h('Directory',    { 'fg': s:accent1 })
-call s:h('Title',        { 'fg': s:accent4, 'gui': 'bold' })
-call s:h('ErrorMsg',     { 'bg': s:faintRed })
-call s:h('DiffAdd',      { 'bg': s:faintGreen })
-call s:h('DiffChange',   { 'bg': s:faintRed })
-call s:h('DiffDelete',   { 'fg': s:normRed, 'bg': s:faintRed })
-call s:h('DiffText',     { 'bg': s:faintRed, 'gui': 'bold' })
-call s:h('User1',        { 'fg': s:bg, 'bg': s:normGreen })
-call s:h('User2',        { 'fg': s:bg, 'bg': s:normRed })
-call s:h('User3',        { 'fg': s:bg, 'bg': s:normBlue })
+call s:h('Folded',       { 'fg': nightsea_col.comment, 'bg': nightsea_col.faint })
+call s:h('Directory',    { 'fg': nightsea_col.accent1 })
+call s:h('Title',        { 'fg': nightsea_col.accent4, 'gui': 'bold' })
+call s:h('ErrorMsg',     { 'bg': nightsea_col.faintRed })
+call s:h('DiffAdd',      { 'bg': nightsea_col.faintGreen })
+call s:h('DiffChange',   { 'bg': nightsea_col.faintRed })
+call s:h('DiffDelete',   { 'fg': nightsea_col.normRed, 'bg': nightsea_col.faintRed })
+call s:h('DiffText',     { 'bg': nightsea_col.faintRed, 'gui': 'bold' })
+call s:h('User1',        { 'fg': nightsea_col.bg, 'bg': nightsea_col.normGreen })
+call s:h('User2',        { 'fg': nightsea_col.bg, 'bg': nightsea_col.normRed })
+call s:h('User3',        { 'fg': nightsea_col.bg, 'bg': nightsea_col.normBlue })
 hi! link WildMenu     IncSearch
 hi! link FoldColumn   SignColumn
 hi! link WarningMsg   ErrorMsg
@@ -396,13 +401,13 @@ hi! link LineNr       NonText
 hi! link SpecialKey   NonText
 
 "........................ Highlights - Generic Syntax .........................
-call s:h('Delimiter',  { 'fg': s:dimmed })
-call s:h('Comment',    { 'fg': s:comment, 'gui': 'italic' })
-call s:h('Underlined', { 'fg': s:accent1, 'gui': 'underline' })
-call s:h('Type',       { 'fg': s:accent3 })
-call s:h('String',     { 'fg': s:accent2 })
-call s:h('Keyword',    { 'fg': s:accent2, 'gui': 'bold'})
-call s:h('Todo',       { 'fg': s:normRed, 'gui': 'bold'})
+call s:h('Delimiter',  { 'fg': nightsea_col.dimmed })
+call s:h('Comment',    { 'fg': nightsea_col.comment, 'gui': 'italic' })
+call s:h('Underlined', { 'fg': nightsea_col.accent1, 'gui': 'underline' })
+call s:h('Type',       { 'fg': nightsea_col.accent3 })
+call s:h('String',     { 'fg': nightsea_col.accent2 })
+call s:h('Keyword',    { 'fg': nightsea_col.accent2, 'gui': 'bold'})
+call s:h('Todo',       { 'fg': nightsea_col.normRed, 'gui': 'bold'})
 call s:h('Function',    {'gui': 'bold'})
 
 hi! link Identifier  Function
@@ -414,9 +419,9 @@ hi! link PreProc     Constant
 hi! link Error       ErrorMsg
 
 "............................. Highlights - Ttodo ..............................
-call s:h('TtodoPriA',       { 'fg': s:normRed})
-call s:h('TtodoPriB',       { 'fg': s:normOrange})
-call s:h('TtodoPriC',       { 'fg': s:normYellow})
+call s:h('TtodoPriA',       { 'fg': nightsea_col.normRed})
+call s:h('TtodoPriB',       { 'fg': nightsea_col.normOrange})
+call s:h('TtodoPriC',       { 'fg': nightsea_col.normYellow})
 
 "............................ Highlights - Vimwiki .............................
 hi! link VimwikiLink Directory
