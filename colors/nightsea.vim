@@ -280,9 +280,24 @@ let s:n255_grey93            = {'gui': '#eeeeee', 'cterm': '255'}
 
 ".......................... Colors used in the theme ...........................
 let nightsea_col = {}
-if &background == "dark"
-  " Dark theme
-  let nightsea_col.noticeme   = s:n013_fuchsia
+" Colors that are always the same:
+let nightsea_col.noticeme   = s:n013_fuchsia
+let nightsea_col.accent1    = s:n064_chartreuse4
+let nightsea_col.accent2    = s:n024_deepskyblue4
+let nightsea_col.accent3    = s:n022_darkgreen
+let nightsea_col.accent4    = s:n153_lightskyblue1
+let nightsea_col.normRed    = s:n124_red3
+let nightsea_col.faintRed   = s:n052_darkred
+let nightsea_col.normGreen  = s:n070_chartreuse3
+let nightsea_col.faintGreen = s:n108_darkseagreen
+let nightsea_col.normBlue   = s:n031_deepskyblue3
+let nightsea_col.faintBlue  = s:n024_deepskyblue4
+let nightsea_col.normOrange = s:n130_darkorange3
+let nightsea_col.normYellow = s:n179_lightgoldenrod3
+let nightsea_col.white      = s:n252_grey82
+let nightsea_col.black      = s:n016_grey0
+" Colors that depend on background:
+if &background == "dark" " Dark theme
   let nightsea_col.bg         = s:n016_grey0
   let nightsea_col.norm       = s:n252_grey82
   let nightsea_col.comment    = s:n241_grey39
@@ -290,23 +305,7 @@ if &background == "dark"
   let nightsea_col.subtle     = s:n238_grey27
   let nightsea_col.nearfaint  = s:n235_grey15
   let nightsea_col.faint      = s:n234_grey11
-  let nightsea_col.accent1    = s:n064_chartreuse4
-  let nightsea_col.accent2    = s:n024_deepskyblue4
-  let nightsea_col.accent3    = s:n022_darkgreen
-  let nightsea_col.accent4    = s:n153_lightskyblue1
-  let nightsea_col.normRed    = s:n124_red3
-  let nightsea_col.faintRed   = s:n052_darkred
-  let nightsea_col.normGreen  = s:n070_chartreuse3
-  let nightsea_col.faintGreen = s:n108_darkseagreen
-  let nightsea_col.normBlue   = s:n031_deepskyblue3
-  let nightsea_col.faintBlue  = s:n024_deepskyblue4
-  let nightsea_col.normOrange = s:n130_darkorange3
-  let nightsea_col.normYellow = s:n179_lightgoldenrod3
-  let nightsea_col.white      = s:n252_grey82
-  let nightsea_col.black      = s:n016_grey0
-else
-  " Light theme
-  let nightsea_col.noticeme   = s:n013_fuchsia
+else " Light theme
   let nightsea_col.bg         = s:n231_grey100
   let nightsea_col.norm       = s:n233_grey7
   let nightsea_col.comment    = s:n246_grey58
@@ -314,21 +313,8 @@ else
   let nightsea_col.subtle     = s:n249_grey70
   let nightsea_col.nearfaint  = s:n254_grey89
   let nightsea_col.faint      = s:n255_grey93
-  let nightsea_col.accent1    = s:n064_chartreuse4
-  let nightsea_col.accent2    = s:n024_deepskyblue4
-  let nightsea_col.accent3    = s:n022_darkgreen
-  let nightsea_col.accent4    = s:n153_lightskyblue1
-  let nightsea_col.normRed    = s:n124_red3
-  let nightsea_col.faintRed   = s:n052_darkred
-  let nightsea_col.normGreen  = s:n070_chartreuse3
-  let nightsea_col.faintGreen = s:n108_darkseagreen
-  let nightsea_col.normBlue   = s:n024_deepskyblue4
-  let nightsea_col.faintBlue  = s:n031_deepskyblue3
-  let nightsea_col.normOrange = s:n130_darkorange3
-  let nightsea_col.normYellow = s:n179_lightgoldenrod3
-  let nightsea_col.white      = s:n252_grey82
-  let nightsea_col.black      = s:n016_grey0
 endif
+
 
 ".............................. Utility Function ..............................
 function! s:h(group, style)
