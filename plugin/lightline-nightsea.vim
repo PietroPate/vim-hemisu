@@ -19,7 +19,7 @@ if exists('nightsea_col') " Make sure colors are defined
     let s:p.inactive.right = [ [ nightsea_col.bg.gui, nightsea_col.comment.gui], [nightsea_col.comment.gui, nightsea_col.bg.gui], [nightsea_col.comment.gui, nightsea_col.bg.gui] ]
     let s:p.inactive.left  = s:p.inactive.right[1:]
 
-    let s:p.insert.left    = [ [ nightsea_col.bg.gui, nightsea_col.norm.gui, 'bold'], [nightsea_col.norm.gui, nightsea_col.comment.gui] ]
+    let s:p.insert.left    = [ [ nightsea_col.norm.gui, nightsea_col.bg.gui, 'bold'], [nightsea_col.norm.gui, nightsea_col.comment.gui] ]
     let s:p.insert.right   = [ [ nightsea_col.bg.gui, nightsea_col.comment.gui  ], [ nightsea_col.bg.gui, nightsea_col.comment.gui ], [ nightsea_col.comment.gui, nightsea_col.norm.gui ] ]
     let s:p.insert.middle  = [ [ nightsea_col.comment.gui, nightsea_col.norm.gui ] ]
 
