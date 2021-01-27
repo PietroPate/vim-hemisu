@@ -10,6 +10,10 @@
 
 "............................... Assign colors .................................
 if exists('nightsea_col') " Make sure colors are defined
+    " If not in gvim, assign transparent as background
+    if !has("gui_running")
+        let nightsea_col.bg.gui = '#000000'
+    endif
     let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
     let s:p.normal.left    = [ [ nightsea_col.bg.gui, nightsea_col.norm.gui, 'bold'], [nightsea_col.norm.gui, nightsea_col.comment.gui] ]
