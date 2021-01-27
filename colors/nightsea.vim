@@ -298,7 +298,7 @@ let nightsea_col.white      = s:n252_grey82
 let nightsea_col.black      = s:n016_grey0
 " Colors that depend on background:
 if &background == "dark" " Dark theme
-  let nightsea_col.bg         = s:n016_grey0
+  let nightsea_col.bg         = s:n000_black
   let nightsea_col.norm       = s:n252_grey82
   let nightsea_col.comment    = s:n241_grey39
   let nightsea_col.dimmed     = s:n246_grey58
